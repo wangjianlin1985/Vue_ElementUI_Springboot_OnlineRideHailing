@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChengkeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChengkeEntity" id="chengkeMap">
+        <result property="chengkezhanghao" column="chengkezhanghao"/>
+        <result property="chengkexingming" column="chengkexingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="mima" column="mima"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="money" column="money"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChengkeVO" >
+		SELECT * FROM chengke  chengke         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChengkeVO" >
+		SELECT  chengke.* FROM chengke  chengke 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChengkeView" >
+
+		SELECT  chengke.* FROM chengke  chengke 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChengkeView" >
+		SELECT * FROM chengke  chengke <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
